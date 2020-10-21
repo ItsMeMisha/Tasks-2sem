@@ -1,0 +1,7 @@
+#ignore object files
+*.o
+/Drawable/*.o
+
+#ignore .gch files
+*.gch
+/Drawable/*.gch 
