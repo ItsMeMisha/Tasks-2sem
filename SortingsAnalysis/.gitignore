@@ -4,4 +4,7 @@
 
 #ignore .gch files
 *.gch
-/Drawable/*.gch 
+/Drawable/*.gch
+
+#ignore reminder
+CodingInstructions.md 
