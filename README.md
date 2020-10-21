@@ -1,1 +1,1 @@
-#Study projects in MIPT
+# Study projects in MIPT
