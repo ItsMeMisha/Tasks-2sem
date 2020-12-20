@@ -14,6 +14,7 @@ namespace MyGraphics {
     protected:
         static bool running;
         static Window* rootWindow;
+    private:
         AbstractApplication();
     };
 }
