@@ -1,21 +1,35 @@
 #ifndef __APPLICATION_MOUSE__
 #define __APPLICATION_MOUSE__
 
+#include "Event.hpp"
 
-namespace Mouse {
+namespace MyGraphics {
 
-#ifdef __SFML_BUILD__
+    class MouseButtonEvent : public Event {
+    public:
+        enum Button {
+            UNDEFINED = 0,
+            LMB = 1,
+            MMB = 2,
+            RMB = 3
+        };
 
-#include <SFML/Window/Mouse.hpp>
+        enum State {
+            PRESSED = 0,
+            RELEASED = 1
+        }:
 
-    typedef sf::Mouse::Button Button;
-
-    struct Position {
-        int x = 0;
-        int y = 0;
+        MouseButtonEvent(const Vector2i& position, const Button& button, const State& state);
+        const Vector2i position;
+        const Button button;
+        const State state;
     };
 
-#endif //__SFML_BUILD__
+    class MouseMoveEvent : public Event {
+    public:
+        MouseMoveEvent(const Vector2i& position);
+        const Vector2i position;
+    }
 }
 
 #endif //__APPLICATION_MOUSE__
