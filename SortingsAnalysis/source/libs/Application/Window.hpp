@@ -1,16 +1,19 @@
 #ifndef __ABSTRACT_WINDOW__
 #define __ABSTRACT_WINDOW__
 
-#include "Keyboard.hpp"
-#include "Mouse.hpp"
+#include "Event.hpp"
 
-class Window {
+namespace MyGraphics {
 
-public:
-    virtual void handleKeyEvent(const Keyboard::Key& key);
-    virtual void handleMouseClick(const Mouse::Button& button);
-    virtual void handleMouseMove(const Mouse::Position& position);
-    virtual void handleResize(int width, int height);
-};
+    class Window {
+    public:
+        Window();
+        virtual void handleEvent(const Event* event) = 0;
+        virtual void addSubwindow(Window* subwindow);
+        virtual ~Window();
+    protected:
+        std::vector<Window*> subwindows;
+    };
+}
 
 #endif //__ABSTRACT_WINDOW__
